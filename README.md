@@ -1,6 +1,6 @@
-# Query Lens
+#### Official Repository for "Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects" [[Paper Link (arXiv)]](https://arxiv.org/abs/2606.07617)
 
-Official implementation of **"Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects"** ([arXiv:2606.07617](https://arxiv.org/abs/2606.07617)).
+##### Hwiyeong Lee, Ingyu Bang, Uiji Hwang, Hyelim Lim and Taeuk Kim. *Accepted to ICML 2026*.
 
 Query Lens extends Logit Lens to enable more comprehensive and faithful interpretations of sparse features (SAE / transcoder latents). By jointly considering encoder-side **key** features and decoder-side **value** features, it identifies both the inputs that activate a feature and the outputs it promotes, while accounting for **indirect, module-mediated effects** that arise when the feature is processed by downstream modules — going beyond the direct effect captured by Logit Lens.
 
@@ -114,13 +114,12 @@ This project is released under the [MIT License](LICENSE).
 ## Citation
 
 ```bibtex
-@misc{lee2026querylensinterpretingsparse,
-      title={Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects},
-      author={Hwiyeong Lee and Ingyu Bang and Uiji Hwang and Hyelim Lim and Taeuk Kim},
-      year={2026},
-      eprint={2606.07617},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG},
-      url={https://arxiv.org/abs/2606.07617},
+@inproceedings{
+lee2026query,
+title={Query Lens: Interpreting Sparse Key-Value Features with Indirect Effects},
+author={Hwiyeong Lee and Ingyu Bang and Uiji Hwang and Hyelim Lim and Taeuk Kim},
+booktitle={Forty-third International Conference on Machine Learning},
+year={2026},
+url={https://openreview.net/forum?id=6t9xJWFjkq}
 }
 ```
