@@ -68,18 +68,23 @@ Main experiments (paper Table 1; HF repositories in Table 3):
 
 | Setting | Config | Model Repository | SAE Repository |
 |---------|--------|------------------|----------------|
-| GPT-2 Small (32K) | `gpt2-small` | openai-community/gpt2 | jbloom/GPT2-Small-OAI-v5-32k-resid-post-SAEs |
-| Gemma-3-270M (65K) | `gemma3-270m` | google/gemma-3-270m | google/gemma-scope-2-270m-pt |
-| Gemma-3-1B (65K) | `gemma3-1b` | google/gemma-3-1b-pt | google/gemma-scope-2-1b-pt |
-| Qwen-3-1.7B (32K) | `qwen3-1.7b-base` | Qwen/Qwen3-1.7B-Base | Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0_100 |
+| GPT-2 Small (32K) | `gpt2-small` | [`openai-community/gpt2`](https://huggingface.co/openai-community/gpt2) | [`jbloom/GPT2-Small-OAI-v5-32k-resid-post-SAEs`](https://huggingface.co/jbloom/GPT2-Small-OAI-v5-32k-resid-post-SAEs) |
+| Gemma-3-270M (65K) | `gemma3-270m` | [`google/gemma-3-270m`](https://huggingface.co/google/gemma-3-270m) | [`google/gemma-scope-2-270m-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-270m-pt) (l0_medium) |
+| Gemma-3-1B (65K) | `gemma3-1b` | [`google/gemma-3-1b-pt`](https://huggingface.co/google/gemma-3-1b-pt) | [`google/gemma-scope-2-1b-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-1b-pt) (l0_medium) |
+| Qwen-3-1.7B (32K) | `qwen3-1.7b-base` | [`Qwen/Qwen3-1.7B-Base`](https://huggingface.co/Qwen/Qwen3-1.7B-Base) | [`Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0_100`](https://huggingface.co/Qwen/SAE-Res-Qwen3-1.7B-Base-W32K-L0_100) |
 
 Additional configurations (paper Appendix D; HF repositories in Table 4):
 
-| Setting | Config | Dictionary Repository |
-|---------|--------|-----------------------|
-| GPT-2 Small (128K) | `gpt2-small` | jbloom/GPT2-Small-OAI-v5-128k-resid-post-SAEs |
-| Gemma-3-270M / 1B (16K), Gemma-3-4B (16K & 65K) | `gemma3-270m` / `gemma3-1b` / `gemma3-4b` | google/gemma-scope-2-{270m,1b,4b}-pt |
-| Qwen-3-0.6B / 1.7B / 4B transcoders | `qwen3-0.6b` / `qwen3-1.7b` / `qwen3-4b` | mwhanna/qwen3-{0.6b,1.7b}-transcoders-lowl0, mwhanna/qwen3-4b-transcoders |
+| Setting | Config | Model Repository | Dictionary Repository |
+|---------|--------|------------------|-----------------------|
+| GPT-2 Small (128K) | `gpt2-small` | [`openai-community/gpt2`](https://huggingface.co/openai-community/gpt2) | [`jbloom/GPT2-Small-OAI-v5-128k-resid-post-SAEs`](https://huggingface.co/jbloom/GPT2-Small-OAI-v5-128k-resid-post-SAEs) |
+| Gemma-3-270M (16K) | `gemma3-270m` | [`google/gemma-3-270m`](https://huggingface.co/google/gemma-3-270m) | [`google/gemma-scope-2-270m-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-270m-pt) (l0_medium) |
+| Gemma-3-1B (16K) | `gemma3-1b` | [`google/gemma-3-1b-pt`](https://huggingface.co/google/gemma-3-1b-pt) | [`google/gemma-scope-2-1b-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-1b-pt) (l0_medium) |
+| Gemma-3-4B (16K) | `gemma3-4b` | [`google/gemma-3-4b-pt`](https://huggingface.co/google/gemma-3-4b-pt) | [`google/gemma-scope-2-4b-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-4b-pt) (l0_medium) |
+| Gemma-3-4B (65K) | `gemma3-4b` | [`google/gemma-3-4b-pt`](https://huggingface.co/google/gemma-3-4b-pt) | [`google/gemma-scope-2-4b-pt/resid_post`](https://huggingface.co/google/gemma-scope-2-4b-pt) (l0_medium) |
+| Qwen-3-0.6B (transcoder) | `qwen3-0.6b` | [`Qwen/Qwen3-0.6B`](https://huggingface.co/Qwen/Qwen3-0.6B) | [`mwhanna/qwen3-0.6b-transcoders-lowl0`](https://huggingface.co/mwhanna/qwen3-0.6b-transcoders-lowl0) |
+| Qwen-3-1.7B (transcoder) | `qwen3-1.7b` | [`Qwen/Qwen3-1.7B`](https://huggingface.co/Qwen/Qwen3-1.7B) | [`mwhanna/qwen3-1.7b-transcoders-lowl0`](https://huggingface.co/mwhanna/qwen3-1.7b-transcoders-lowl0) |
+| Qwen-3-4B (transcoder) | `qwen3-4b` | [`Qwen/Qwen3-4B`](https://huggingface.co/Qwen/Qwen3-4B) | [`mwhanna/qwen3-4b-transcoders`](https://huggingface.co/mwhanna/qwen3-4b-transcoders) |
 
 ## Pipeline
 
