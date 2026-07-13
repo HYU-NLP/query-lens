@@ -1,0 +1,30 @@
+# @package _global_
+
+defaults:
+  - _self_
+
+# Feature analysis configuration
+features_pkl: features/features-sample-gemma-3-1b-16k-res-s17.pkl  # Required: Path to the features pickle file
+model: google/gemma-3-1b-pt
+num_samples: 1024
+max_length: 32
+seed: 42
+logs_dir: base
+output_filename: feature_analysis.jsonl
+resid_device: cuda
+k: 25
+submodule: both  # both, attn, or mlp
+use_unembed_layer_norm: true
+use_jvp_layer_norm: true
+use_vjp_layer_norm: true
+dtype: bfloat16  # float32, float16, bfloat16, float, half
+accumulation_steps: 1
+
+# Baseline configuration
+baseline: null                   # preset name (overrides components below)
+feature_vector: value            # value or key
+stream_transition: first_order   # identity, first_order, full, token_change, zero_out, tuned_lens
+readout: unembed                 # unembed, embed, embed_cosine_centered
+params_path: tuned_lens/gemma3-1b/params.pt  # only for tuned_lens
+token_change_value: 10.0         # only for token_change
+

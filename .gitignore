@@ -1,0 +1,85 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Unit test / coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.hypothesis/
+
+# IDE / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Type checkers
+.mypy_cache/
+.dmypy.json
+.pytype/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Project artifacts
+*.pkl
+*.pt
+wandb/
+.gradio/
+
+# Data / features
+features/
+neuronpedia_exports/
+transluce_exports/
+train/
+figures/
+
+# Experiments (all variants)
+experiments/
+experiments_old/
+
+# Paper build artifacts (keep source)
+paper/**/*.aux
+paper/**/*.bbl
+paper/**/*.blg
+paper/**/*.fdb_latexmk
+paper/**/*.fls
+paper/**/*.out
+paper/**/*.synctex.gz
+paper/**/*.pdf
+!paper/query-lens.pdf
+
+# Generated outputs
+logs/
+table_exports/
+
+# Internal experiment scripts / trained lens configs (not part of the release)
+/scripts/
+/tuned_lens/
+
+# Local tooling state
+.omc/
+.claude/
