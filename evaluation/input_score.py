@@ -15,7 +15,6 @@ from typing import Dict, List, Any, Optional, Tuple
 import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from util import Feature, Activation, read_pkl_file, normalize_tokens
-# visualization imports removed: summarize_scores / save_layerwise_plot no longer needed
 
 
 def _safe_list(x: Any) -> List[str]:
@@ -362,6 +361,14 @@ def main():
 
     features_map = results.get("features", {})
     summary_stats = results.get("summary", {})
+
+    if args.visualize:
+        from visualization.visualize import save_input_score_plot
+
+        plot_path = os.path.splitext(results["output_path"])[0] + ".png"
+        saved_path = save_input_score_plot(summary_stats.get("layers", []), plot_path)
+        if saved_path is not None:
+            print(f"Plot saved to {saved_path}")
 
     overall = summary_stats.get("overall", {})
 

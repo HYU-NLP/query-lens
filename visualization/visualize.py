@@ -15,6 +15,7 @@ Backward compatible:
 """
 
 import json
+import math
 import os
 import re
 from collections import defaultdict
@@ -161,6 +162,36 @@ def summarize_scores(
     }
 
     return summary_stats, (layers, first_means, positive_means, approx_means, full_means)
+
+
+def save_input_score_plot(layer_stats: List[Dict[str, Any]], output_path: str) -> Optional[str]:
+    """Plot the current single-score per-layer means, skipping unusable rows."""
+    rows = sorted(
+        (row for row in layer_stats
+         if isinstance(row.get("layer"), int)
+         and isinstance(row.get("mean"), (int, float)) and math.isfinite(row["mean"])),
+        key=lambda row: row["layer"],
+    )
+    if not rows:
+        print("Warning: No usable layer scores to plot. Check feature layer IDs and input scores.")
+        return None
+
+    layers = [row["layer"] for row in rows]
+    means = [row["mean"] for row in rows]
+    fig, ax = plt.subplots(figsize=(9.5, 5))
+    try:
+        ax.plot(layers, means, marker="o", linewidth=2)
+        ax.set_xlabel("Layer")
+        ax.set_ylabel("Mean Input Score")
+        ax.set_title("Layerwise Mean Input Scores")
+        ax.set_xticks(layers)
+        ax.set_ylim(0, 1)
+        ax.grid(axis="y", alpha=0.3)
+        fig.tight_layout()
+        fig.savefig(output_path, bbox_inches="tight")
+    finally:
+        plt.close(fig)
+    return output_path
 
 
 def save_layerwise_plot(
